@@ -80,12 +80,14 @@ class Home {
   }
   render() {}
 }
+
 class HomeSection {
   home = new Home(
     "It all in our box",
     "./assets/images/junosoft.png",
     "Our Works"
   );
+
   render() {
     const app = document.getElementById("app");
     console.log(app);
@@ -95,7 +97,7 @@ class HomeSection {
     const homeDiv = document.createElement("div");
     homeDiv.className = "home-background";
     const ourWorkButton = document.createElement("button");
-    ourWorkButton.innerHTML = `${this.home.ourWork}`;
+    ourWorkButton.innerHTML = `<a href="#our_work">${this.home.ourWork}</a>`;
     const missionDiv = document.createElement("div");
     missionDiv.className = "app-mission";
     const imgLogo = document.createElement("img");
@@ -406,7 +408,7 @@ class AdviceSection {
     adviceContainer.innerHTML = `
     <div>${this.advice.adviceTitle}</div>
     <div>${this.advice.motoName}</div>
-    <div><i class="fa fa-2x fa-angle-down" id="go-down"></i></div>
+    <div><a href="#contact_us"><button><img src="" alt="go down"></i></button></a></div>
     `;
     adviceSection.append(adviceContainer);
     return adviceSection;
@@ -471,7 +473,16 @@ $("header ul li a").on("click", function (e) {
   const href = $(this).attr("href");
   $("html, body").animate({ scrollTop: $(href).offset().top }, 800);
 });
-
+$("section .app-mission button").on("click", function (e) {
+  e.preventDefault();
+  const href = $(this).attr("href");
+  $("html, body").animate({ scrollTop: $(href).offset().top }, 800);
+});
+$("section .advice-section button").on("click", function (e) {
+  e.preventDefault();
+  const href = $(this).attr("href");
+  $("html, body").animate({ scrollTop: $(href).offset().top }, 800);
+});
 class AppRender {
   render() {
     const renderHook = document.querySelector(".app");
