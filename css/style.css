@@ -2,7 +2,7 @@
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   box-sizing: border-box;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 body {
   margin: 0;
@@ -48,14 +48,16 @@ header {
 }
 
 /*HOME SECTION*/
-.home-background {
+#home {
   margin: 0;
-  height: 100vh;
   background-image: url("../assets/images/RenderPhoto.jpg");
   background-size: cover;
   background-clip: border-box;
   background-repeat: no-repeat;
   background-position: center;
+}
+.home-background {
+  height: 100vh;
 }
 p {
   margin: 0;
@@ -224,13 +226,15 @@ ul {
   display: grid;
   grid-template-columns: 20% 80%;
   padding-top: 2rem;
+  height: auto;
+  width: 100%;
 }
 .side-nav__list {
   list-style: none;
   background-color: #004e64;
   /* margin-left: 1rem; */
   padding-top: 2rem;
-  height: 460px;
+  height: 320px;
   color: white;
 }
 .side-nav__list-element {
@@ -245,14 +249,21 @@ ul {
   gap: 0.8rem;
 }
 .img-clickable {
-  width: 170px;
-  height: 200px;
+  width: 120px;
+  height: 130px;
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}
+.img-clickable:hover {
+  transform: scale(1);
 }
 .work-name_portofolio {
   color: #004e64;
   font-weight: bold;
+  padding: 0.3rem 0;
 }
 .item-list__element {
+  overflow: hidden;
   cursor: pointer;
 }
 
